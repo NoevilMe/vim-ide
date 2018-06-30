@@ -314,3 +314,8 @@ set path+=~/develop/rufus/rufus,~/develop/rufus,~/develop/rufus/lib
 "
 "Magfs
 set path+=~/thirdparty-linux/magfs-sdk/include
+
+"----------DOCUMENT---------
+"do not indent when paste
+"set paste , before pasting
+"set nopaste , after pasting
