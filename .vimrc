@@ -68,6 +68,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'altercation/vim-colors-solarized'
+Plug 'jlanzarotta/bufexplorer'
 "Plug 'derekwyatt/vim-scala'
 " the best code completer for c++, python etc
 Plug 'Valloric/YouCompleteMe',{'do': './install.py --clang-completer'}
@@ -217,7 +218,7 @@ let g:ycm_cache_omnifunc=0			" 禁止缓存匹配项,每次都重新生成匹配
 let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
 
 let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/home/yunna/anaconda3/bin/python3'
 
 "let g:ycm_global_ycm_extra_conf =
 "'~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
@@ -308,14 +309,31 @@ nnoremap <leader>hga :HeaderguardAdd<CR>
 
 
 "}}
+"
+"
+"bufexplorer{{
+"be' (normal open) or 'bt' (toggle open / close)
+"'bs' (force horizontal split open)
+"'bv' (force vertical split open)
+
+"The set of commands that can be used during exploring are: 
+"F - Open selected buffer in another window above the current. 
+"f - Open selected buffer in another window below the current. 
+"V - Open the selected buffer in another window on the left of the current. 
+"v - Open the selected buffer in another window on the right of the current.
+
+"}}
 
 "Rufus
 set path+=~/develop/rufus/rufus,~/develop/rufus,~/develop/rufus/lib
 "
 "Magfs
-set path+=~/thirdparty-linux/magfs-sdk/include
+set path+=~/work/muduo
+set path+=~/work/nest
 
-"----------DOCUMENT---------
-"do not indent when paste
-"set paste , before pasting
-"set nopaste , after pasting
+-"----------DOCUMENT---------
+-"do not indent when paste
+-"set paste , before pasting
+-"set nopaste , after pasting
+
+set viminfo='100,n$HOME/.vim/files/info/viminfo'
