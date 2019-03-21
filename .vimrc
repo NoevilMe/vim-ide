@@ -23,14 +23,14 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'  }
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
- Plug 'fatih/vim-go', { 'tag': '*'  }
+" Plug 'fatih/vim-go', { 'tag': '*'  }
 
  " Plugin options
- Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim'  }
+" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim'  }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+" Plug 'junegunn/fzf.vim'
 
 Plug 'haya14busa/incsearch.vim'
 " Unmanaged plugin (manually installed and updated)
@@ -100,12 +100,12 @@ syntax on 		        "语法高亮
 " solarized {{
 set background=dark
 "set background=light
-colorscheme solarized
 let g:colors_name='solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
+colorscheme solarized
 "}}
 "colorscheme darkblue    "设置配色方案，vim自带的配色方案保存在/usr/share/vim/vim74/colors目录下
 "colorscheme molokai      "设置配色方案，vim自带的配色方案保存在/usr/share/vim/vim74/colors目录下
@@ -218,7 +218,8 @@ let g:ycm_cache_omnifunc=0			" 禁止缓存匹配项,每次都重新生成匹配
 let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
 
 let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/home/yunna/anaconda3/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
 
 "let g:ycm_global_ycm_extra_conf =
 "'~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
