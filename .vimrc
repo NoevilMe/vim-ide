@@ -10,9 +10,7 @@ call plug#begin('~/.vim/plugged')
 " Any valid git URL is allowed, github plugins update status dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-
-" Using a non-master branch
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'  }
+Plug 'itchyny/calendar.vim'
 
 " search
 Plug 'dkprice/vim-easygrep'
@@ -23,16 +21,18 @@ Plug 'haya14busa/incsearch.vim'
 "
 "
 Plug 'Shougo/vimproc.vim',{'do': 'make'}
-Plug 'Shougo/vimshell.vim'            "depends on vimproc
+"Plug 'Shougo/vimshell.vim'            "depends on vimproc
+Plug 'Shougo/deol.nvim'
 
 "Plug 'Shougo/unite.vim'
 " the best Git wrapper
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " resource manager
  " On-demand loading
- Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
+Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'jlanzarotta/bufexplorer'
 " a class outline viewer
 Plug 'majutsushi/tagbar'
@@ -71,21 +71,24 @@ Plug 'terryma/vim-multiple-cursors'
 "Plug 'derekwyatt/vim-scala'
 "
 " comment
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 "
 " markdown
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }  }
+
+
 " format
  " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
  "
+Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
 
-"
+
 " completer
 "Plug ''
 Plug 'easymotion/vim-easymotion'
 " the best code completer for c++, python etc
-Plug 'Valloric/YouCompleteMe',{'do': './install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
 " a syntax checking
 Plug 'scrooloose/syntastic'
 " bracket
@@ -197,7 +200,22 @@ nmap <C-L> <C-W>l
 "NERDTree{{
 map nt :NERDTreeToggle<CR>
 "let NERDTreeWinSize=23
-""}}
+"autocmd vimenter * NERDTree
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+"}}
 
 "TagBar{{
 map tb :TagbarToggle<CR>
