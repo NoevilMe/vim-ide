@@ -93,7 +93,6 @@ Plug 'scrooloose/syntastic'
 " bracket
 Plug 'jiangmiao/auto-pairs'
 "Plug 'neoclide/coc.nvim'
- Plug 'ervandew/supertab'
 
 " the best code completer for c++, python etc
 Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
