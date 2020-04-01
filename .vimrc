@@ -15,17 +15,17 @@ Plug 'itchyny/calendar.vim'
 " search
 Plug 'dkprice/vim-easygrep'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'haya14busa/incsearch.vim'
 
-" Plugin on GitHub repo
-"
-"
-Plug 'Shougo/vimproc.vim',{'do': 'make'}
-"Plug 'Shougo/vimshell.vim'            "depends on vimproc
-Plug 'Shougo/deol.nvim'
 
-"Plug 'Shougo/unite.vim'
-" the best Git wrapper
+" Shell
+Plug 'Shougo/vimproc.vim',{'do': 'make'}
+Plug 'Shougo/vimshell.vim'            "depends on vimproc
+"Plug 'Shougo/deol.nvim'
+
+
+" Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -33,18 +33,17 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " resource manager
  " On-demand loading
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle'  }
-Plug 'jlanzarotta/bufexplorer'
-" a class outline viewer
 Plug 'majutsushi/tagbar'
+"Plug 'jlanzarotta/bufexplorer'
 
-" for language
+" syntax for language
 Plug 'elzr/vim-json'
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-Plug 'fatih/vim-go', { 'tag': '*'  }
- " Plugin options
-Plug 'nsf/gocode', { 'tag': 'v.20170907', 'rtp': 'vim'  }
 " c++
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 " selection
 Plug 'kana/vim-textobj-user'
@@ -85,18 +84,19 @@ Plug 'junegunn/vim-easy-align'
 
 
 " completer
-"Plug ''
+" Multiple Plug commands can be written in a single line using | separators
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
 Plug 'easymotion/vim-easymotion'
-" the best code completer for c++, python etc
-Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
 " a syntax checking
 Plug 'scrooloose/syntastic'
 " bracket
 Plug 'jiangmiao/auto-pairs'
 "Plug 'neoclide/coc.nvim'
-" Multiple Plug commands can be written in a single line using | separators
- Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
  Plug 'ervandew/supertab'
+
+" the best code completer for c++, python etc
+Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plug 'vim-scripts/L9'
@@ -386,6 +386,14 @@ let g:gitgutter_terminal_reports_focus = 0
 "v - Open the selected buffer in another window on the right of the current.
 
 "}}
+"
+" LeaderF {{
+"
+"let g:Lf_PreviewInPopup = 1
+let g:Lf_WindowPosition = 'popup'
+
+"
+" }}
 
 "Rufus
 set path+=~/develop/rufus/rufus,~/develop/rufus,~/develop/rufus/lib
