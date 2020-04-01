@@ -7,71 +7,93 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
- " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
+" Any valid git URL is allowed, github plugins update status dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-" Multiple Plug commands can be written in a single line using | separators
- Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
- " On-demand loading
- Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
 
 " Using a non-master branch
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'  }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'  }
 
-" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-" Plug 'fatih/vim-go', { 'tag': '*'  }
-
- " Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim'  }
-
-" Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-" Plug 'junegunn/fzf.vim'
-
+" search
+Plug 'dkprice/vim-easygrep'
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'haya14busa/incsearch.vim'
-" Unmanaged plugin (manually installed and updated)
-" Plug '~/my-prototype-plugin'
 
 " Plugin on GitHub repo
 "
+"
 Plug 'Shougo/vimproc.vim',{'do': 'make'}
 Plug 'Shougo/vimshell.vim'            "depends on vimproc
+
 "Plug 'Shougo/unite.vim'
 " the best Git wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" resource manager
+ " On-demand loading
+ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle'  }
+Plug 'jlanzarotta/bufexplorer'
 " a class outline viewer
 Plug 'majutsushi/tagbar'
-" better json
+
+" for language
 Plug 'elzr/vim-json'
-"
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*'  }
+ " Plugin options
+Plug 'nsf/gocode', { 'tag': 'v.20170907', 'rtp': 'vim'  }
+" c++
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+" selection
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-entire'
 Plug 'tpope/vim-surround'
+
+" locate
 Plug 'vim-scripts/a.vim'
-Plug 'dkprice/vim-easygrep'
-"Plun 'mhinz/vim-grepper'
-Plug 'ctrlpvim/ctrlp.vim'
-" a syntax checking
-Plug 'scrooloose/syntastic'
-"Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
 "
 Plug 'mhinz/vim-startify'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+
+" display
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'Yggdroot/indentLine'
+
+" guide
+"Plug 'Shougo/echodoc.vim'
 Plug 'sjl/gundo.vim'
 Plug 'drmikehenry/vim-headerguard'
-Plug 'jiangmiao/auto-pairs'
-Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'altercation/vim-colors-solarized'
-Plug 'jlanzarotta/bufexplorer'
 "Plug 'derekwyatt/vim-scala'
+"
+" comment
+Plug 'scrooloose/nerdcommenter'
+"
+" markdown
+"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }  }
+" format
+ " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+ "
+Plug 'junegunn/vim-easy-align'
+
+"
+" completer
+"Plug ''
+Plug 'easymotion/vim-easymotion'
 " the best code completer for c++, python etc
 Plug 'Valloric/YouCompleteMe',{'do': './install.py --clang-completer'}
+" a syntax checking
+Plug 'scrooloose/syntastic'
+" bracket
+Plug 'jiangmiao/auto-pairs'
+"Plug 'neoclide/coc.nvim'
+" Multiple Plug commands can be written in a single line using | separators
+ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+ Plug 'ervandew/supertab'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plug 'vim-scripts/L9'
@@ -192,6 +214,7 @@ nnoremap <leader>ce :CtrlPBuffer<CR>
 ""set runtimepath^=~/.vim/bundle/ctrlp.vim
 "}}
 
+
 "YCM{{
 "" 自动补全配置
 set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
@@ -218,8 +241,8 @@ let g:ycm_cache_omnifunc=0			" 禁止缓存匹配项,每次都重新生成匹配
 let g:ycm_seed_identifiers_with_syntax=1	" 语法关键字补全
 
 let g:ycm_server_log_level = 'debug'
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 
 "let g:ycm_global_ycm_extra_conf =
 "'~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
@@ -246,6 +269,15 @@ nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 "    "    GoToDefinitionElseDeclaration
 "    "}}
 
+
+" supertab {{
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+"}}
 
 
 "Airline {{
@@ -311,7 +343,19 @@ nnoremap <leader>hga :HeaderguardAdd<CR>
 
 "}}
 "
+" vim-cpp-enhanced-highlight {{
 "
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+"let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+"
+"
+" }}
+"
+"
+let g:gitgutter_terminal_reports_focus = 0
+
 "bufexplorer{{
 "be' (normal open) or 'bt' (toggle open / close)
 "'bs' (force horizontal split open)
@@ -327,10 +371,6 @@ nnoremap <leader>hga :HeaderguardAdd<CR>
 
 "Rufus
 set path+=~/develop/rufus/rufus,~/develop/rufus,~/develop/rufus/lib
-"
-"Magfs
-set path+=~/work/muduo
-set path+=~/work/nest
 
 -"----------DOCUMENT---------
 -"do not indent when paste
