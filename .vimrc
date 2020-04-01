@@ -52,9 +52,7 @@ Plug 'tpope/vim-surround'
 
 " locate
 Plug 'vim-scripts/a.vim'
-"
 Plug 'mhinz/vim-startify'
-Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " display
 Plug 'vim-airline/vim-airline'
@@ -287,8 +285,6 @@ nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 "    "}}
 
 
-" supertab {{
-let g:SuperTabDefaultCompletionType = '<C-n>'
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -325,17 +321,6 @@ let g:airline_exclude_preview = 1
 
 "}}
 
-
-"CtrlSpace{{
-
-"不用移动手指哟
-nnoremap <leader>dk :CtrlSpace<CR>
-
-"let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-"let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-"let g:CtrlSpaceSaveWorkspaceOnExit = 1
-
-"}}
 
 "a.vim {{
 
