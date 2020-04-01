@@ -28,3 +28,6 @@ sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 1
 sudo update-alternatives --set vi /usr/local/bin/vim
 sudo update-alternatives --install /usr/bin/vim vim /usr/local/bin/vim 1
 sudo update-alternatives --set vim /usr/local/bin/vim
+
+echo "install https://github.com/BurntSushi/ripgrep manually"
+echo "install https://github.com/sharkdp/fd manually"
