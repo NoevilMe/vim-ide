@@ -30,7 +30,8 @@ set shiftwidth=4            " (自动) 缩进使用的4个空格
 set bs=2                    "在insert模式下用退格键删除
 set helplang=cn             "帮助系统设置为中文
 set encoding=utf-8	        "帮助文件的文本是utf-8编码的, 如果想用vim直接查看, 需要中设置：
-set fileencodings=uft-8     ",gbk "使用utf-8或gbk打开文件
+"set termencoding=utf-8
+set fileencodings=utf-8     ",gbk "使用utf-8或gbk打开文件
 set foldmethod=syntax       "代码折叠
 set foldlevel=100           "启动vim时不要自动折叠代码 za，打开或关闭当前折叠；zM，关闭所有折叠；zR，打开所有折叠
 set history=50		        " set command history to 50 "历史记录50条
@@ -38,6 +39,8 @@ set laststatus=2	        "总显示最后一个窗口的状态行；设为1则�
 set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 set t_Co=256        "required
 set background=dark
+"set guifont=DroidSansMono_Nerd_Font:h12
+"set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 syntax enable
 syntax on 		        "语法高亮
@@ -94,7 +97,7 @@ Plug 'itchyny/calendar.vim'
 
 " search
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+"Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 
 " Shell
@@ -142,6 +145,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'Yggdroot/indentLine'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " guide
 "Plug 'Shougo/echodoc.vim'
@@ -200,8 +205,38 @@ let g:header_field_copyright = 'Copyright(C)2020 cloudpick. All rights reserved.
 " }}
 
 "NERDTree{{
+" you can add these colors to your .vimrc to help customizing
+ "let s:brown = "905532"
+ "let s:aqua =  "3AFFDB"
+ "let s:blue = "689FB6"
+ "let s:darkBlue = "44788E"
+ "let s:purple = "834F79"
+ "let s:lightPurple = "834F79"
+ "let s:red = "AE403F"
+ "let s:beige = "F5C06F"
+ "let s:yellow = "F09F17"
+ "let s:orange = "D4843E"
+ "let s:darkOrange = "F16529"
+ "let s:pink = "CB6F6F"
+ "let s:salmon = "EE6E73"
+ "let s:green = "8FAA54"
+ "let s:lightGreen = "31B53E"
+ "let s:white = "FFFFFF"
+ "let s:rspec_red = 'FE405F'
+ "let s:git_orange = 'F54D27'
 "let NERDTreeWinSize=23
 "autocmd vimenter * NERDTree
+" Disable arrow icons at the left side of folders for NERDTree.
+"let g:NERDTreeDirArrowExpandable = "\u00a0"
+"let g:NERDTreeDirArrowCollapsible = "\u00a0"
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:DevIconsEnableFoldersOpenClose = 1 "Enables different glyphs for open and closed folders"
+let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+"let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
+"let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -286,8 +321,6 @@ let g:airline_powerline_fonts = 1
 "我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-
 " 关闭状态显示空白符号计数
 "let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
