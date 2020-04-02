@@ -8,6 +8,7 @@
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader = ';'
+let base16colorspace=256  " Access colors present in 256 colorspace"
 
 set nocompatible              " be iMproved, required
 set hidden                    " ctrlSpace
@@ -120,7 +121,7 @@ Plug 'majutsushi/tagbar'
 " syntax for language
 Plug 'elzr/vim-json'
 " c++
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -141,9 +142,9 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
 
 " display
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -187,15 +188,14 @@ call plug#end()"
 
 
 " solarized {{
-"colorscheme darkblue    "设置配色方案，vim自带的配色方案保存在/usr/share/vim/vim74/colors目录下
-"colorscheme molokai      "设置配色方案，vim自带的配色方案保存在/usr/share/vim/vim74/colors目录下
-"colorscheme Tomorrow-Night-Eighties
 let g:colors_name='solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
-colorscheme solarized
+""colorscheme solarized
+colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Bright
 "}}
 
 " copyright header {{
