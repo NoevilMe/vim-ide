@@ -98,6 +98,7 @@ Plug 'itchyny/calendar.vim'
 
 " search
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'liuchengxu/vim-clap'
 "Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 
 
