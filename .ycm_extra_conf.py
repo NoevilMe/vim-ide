@@ -61,7 +61,7 @@ flags = [
 'c++',
 '-isystem',
 # must put in front of /usr/include
-'/usr/include/c++/7.3.0',
+'/usr/include/c++/7',
 '-isystem',
 '/usr/include',
 '-I',

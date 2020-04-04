@@ -1,58 +1,50 @@
-" Copyright(C)2020 cloudpick. All rights reserved.
-" File              : .vimrc
-" Author            : Jason.Tang <surpass168@outlook.com>
-" Date              : 02.04.2020
-" Last Modified Date: 02.04.2020
-" Last Modified By  : Jason.Tang <surpass168@outlook.com>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let mapleader = ';'
-let base16colorspace=256  " Access colors present in 256 colorspace"
+syntax   on               " 语法高亮
+filetype off              " required
+filetype plugin indent on " required
 
-set nocompatible              " be iMproved, required
-set hidden                    " ctrlSpace
-set showmatch               "设置匹配模式，显示匹配的括号
-set number                  "显示行号
-set cursorline              "为光标所在行加下划线
-set autoread                "文件在Vim之外修改过，自动重新读入
-set ignorecase              "检索时忽略大小写
-set hls                     "检索时高亮显示匹配项
-set ruler                   "标尺，用于显示光标位置的行号和列号，逗号分隔。每个窗口都有自己的标尺。如果窗口有状态行，标尺在那里显示。否则，它显示在屏幕的最后一行上
-set showcmd 		        "命令行显示输入的命令
-set showmode		        "命令行显示vim当前模式
-"设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
-set cindent 		    " 使用 C/C++ 语言的自动缩进方式
+let mapleader=';'
+let base16colorspace=256     " Access colors present in 256 colorspace"
 
-set tabstop=4 		    " 设置制表符(tab键)的宽度
-set softtabstop=4           " 设置软制表符的宽度
-set expandtab               "以下三个配置配合使用，设置tab和缩进空格数
-set shiftwidth=4            " (自动) 缩进使用的4个空格
-set bs=2                    "在insert模式下用退格键删除
-set helplang=cn             "帮助系统设置为中文
-set encoding=utf-8	        "帮助文件的文本是utf-8编码的, 如果想用vim直接查看, 需要中设置：
-"set termencoding=utf-8
-set fileencodings=utf-8     ",gbk "使用utf-8或gbk打开文件
-set foldmethod=syntax       "代码折叠
-set foldlevel=100           "启动vim时不要自动折叠代码 za，打开或关闭当前折叠；zM，关闭所有折叠；zR，打开所有折叠
-set history=50		        " set command history to 50 "历史记录50条
-set laststatus=2	        "总显示最后一个窗口的状态行；设为1则窗口数多于一个的时候显示最后一个窗口的状态行；0不显示最后一个窗口的状态行
-set completeopt=longest,menu	"让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
-set t_Co=256        "required
+set nocompatible             " be iMproved, required
+set hidden                   " ctrlSpace
+set showmatch                " 设置匹配模式，显示匹配的括号
+set number                   " 显示行号
+set cursorline               " 为光标所在行加下划线
+set autoread                 " 文件在Vim之外修改过，自动重新读入
+set ignorecase               " 检索时忽略大小写
+set hls                      " 检索时高亮显示匹配项
+set ruler                    " 标尺，用于显示光标位置的行号和列号，逗号分隔。每个窗口都有自己的标尺。如果窗口有状态行，标尺在那里显示。否则，它显示在屏幕的最后一行上
+set showcmd                  " 命令行显示输入的命令
+set showmode                 " 命令行显示vim当前模式
+set cindent                  " 使用 C/C++ 语言的自动缩进方式
+set expandtab                " 以下三个配置配合使用，设置tab和缩进空格数
+
+set bs=2                     " 在insert模式下用退格键删除
+set t_Co=256                 " required
+set tabstop=4                " 设置制表符(tab键)的宽度
+set history=50               " set command history to 50 "历史记录50条
+set helplang=cn              " 帮助系统设置为中文
+set encoding=utf-8           " 帮助文件的文本是utf-8编码的, 如果想用vim直接查看, 需要中设置：
+set foldlevel=100            " 启动vim时不要自动折叠代码 za，打开或关闭当前折叠；zM，关闭所有折叠；zR，打开所有折叠
+set shiftwidth=4             " (自动) 缩进使用的4个空格
+set foldmethod=syntax        " 代码折叠
+set laststatus=2             " 总显示最后一个窗口的状态行；设为1则窗口数多于一个的时候显示最后一个窗口的状态行；0不显示最后一个窗口的状态行
 set background=dark
-"set guifont=DroidSansMono_Nerd_Font:h12
-"set guifont=DroidSansMono\ Nerd\ Font\ 11
-
-syntax enable
-syntax on 		        "语法高亮
-filetype off                  " required
-filetype plugin indent on    " required
+set softtabstop=4            " 设置软制表符的宽度
+set completeopt=longest,menu " 让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
+set fileencodings=utf-8      " ,gbk "使用utf-8或gbk打开文件
+set guifont=DroidSansMono\ Nerd\ Font\ 11
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Hotkeys
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " switch buffers
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :bn<CR>
-
 "映射光标在窗口间移动的快捷键
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
@@ -62,24 +54,19 @@ nmap <C-L> <C-W>l
 map <F4> :AddHeader<CR>
 map nt :NERDTreeToggle<CR>
 map tb :TagbarToggle<CR>
-
 "设置切换Buffer快捷键"
 nnoremap <C-P> :bp<CR>
 nnoremap <C-N> :bn<CR>
-
 "a.vim
 nnoremap <leader>gt :A<CR>
 nnoremap <leader>gv :AV<CR>
 nnoremap <leader>gh :AS<CR>
-
 "VimShell
 nnoremap <leader>vs :VimShell<CR>
 nnoremap <leader>vc :VimShellClose<CR>
-
 "Header guard
 nnoremap <leader>hga :HeaderguardAdd<CR>
-
-
+"YCM
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR> " 跳转到定义处
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
@@ -90,58 +77,43 @@ nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
-
 " Any valid git URL is allowed, github plugins update status dashboard
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
 Plug 'itchyny/calendar.vim'
-
 " search
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'liuchengxu/vim-clap'
 "Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
-
-
 " Shell
 Plug 'Shougo/vimproc.vim',{'do': 'make'}
 Plug 'Shougo/vimshell.vim'            "depends on vimproc
 "Plug 'Shougo/deol.nvim'
-
-
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " resource manager
- " On-demand loading
+" On-demand loading
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle'  }
 Plug 'majutsushi/tagbar'
 "Plug 'jlanzarotta/bufexplorer'
-
 " syntax for language
 Plug 'elzr/vim-json'
 " c++
 "Plug 'octol/vim-cpp-enhanced-highlight'
-
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
-
 " selection
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-
 " replace
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-surround'
-
 " locate
 Plug 'vim-scripts/a.vim'
 Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
 Plug 'easymotion/vim-easymotion'
-
 " display
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
@@ -149,22 +121,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 " guide
 "Plug 'Shougo/echodoc.vim'
 Plug 'sjl/gundo.vim'
 Plug 'terryma/vim-multiple-cursors'
-
 " comment
 Plug 'preservim/nerdcommenter'
-"
-" markdown
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }  }
-
 " format
 Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
-
 " completer
 Plug 'alpertuna/vim-header'
 Plug 'drmikehenry/vim-headerguard'
@@ -177,67 +142,53 @@ Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
 Plug 'scrooloose/syntastic'
 " bracket
 Plug 'jiangmiao/auto-pairs'
-
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plug 'vim-scripts/L9'
-
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
-
  " Initialize plugin system
 call plug#end()"
 
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " solarized {{
 let g:colors_name='solarized'
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
-""colorscheme solarized
+"colorscheme solarized
 colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night-Bright
 "}}
 
 " copyright header {{
-let g:header_field_author = 'Jason.Tang'
-let g:header_field_author_email = 'surpass168@outlook.com'
-let g:header_field_copyright = 'Copyright(C)2020 cloudpick. All rights reserved.'
+let g:header_auto_add_header        = 0
+let g:header_field_author           = 'Jason.Tang'
+let g:header_field_author_email     = 'surpass168@outlook.com'
+let g:header_field_copyright        = 'Copyright(C)2020 cloudpick. All rights reserved.'
+let g:header_field_timestamp_format = '%Y-%m-%d %H:%M:%S'
+" }}
+
+" EasyAlign {{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}
 
 "NERDTree{{
-" you can add these colors to your .vimrc to help customizing
- "let s:brown = "905532"
- "let s:aqua =  "3AFFDB"
- "let s:blue = "689FB6"
- "let s:darkBlue = "44788E"
- "let s:purple = "834F79"
- "let s:lightPurple = "834F79"
- "let s:red = "AE403F"
- "let s:beige = "F5C06F"
- "let s:yellow = "F09F17"
- "let s:orange = "D4843E"
- "let s:darkOrange = "F16529"
- "let s:pink = "CB6F6F"
- "let s:salmon = "EE6E73"
- "let s:green = "8FAA54"
- "let s:lightGreen = "31B53E"
- "let s:white = "FFFFFF"
- "let s:rspec_red = 'FE405F'
- "let s:git_orange = 'F54D27'
-"let NERDTreeWinSize=23
 "autocmd vimenter * NERDTree
 " Disable arrow icons at the left side of folders for NERDTree.
 "let g:NERDTreeDirArrowExpandable = "\u00a0"
 "let g:NERDTreeDirArrowCollapsible = "\u00a0"
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let g:DevIconsEnableFoldersOpenClose = 1 "Enables different glyphs for open and closed folders"
+let g:NERDTreeDirArrowExpandable            = '+'
+let g:NERDTreeDirArrowCollapsible           = '-'
+let g:DevIconsEnableFoldersOpenClose        = 1 "Enables different glyphs for open and closed folders"
 let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
-"let g:WebDevIconsNerdTreeBeforeGlyphPadding = ''
-"let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
