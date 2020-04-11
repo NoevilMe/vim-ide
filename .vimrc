@@ -61,21 +61,29 @@ endif"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Hotkeys
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" i(nore)map, work in insert mode
+" v(nore)map, work in visual mode
+" n(nore)map, work in normal mode
+
 " switch buffers
+nnoremap <C-P> :bp<CR>
+nnoremap <C-N> :bn<CR>
 nnoremap <F2> :bp<CR>
 nnoremap <F3> :bn<CR>
+
+noremap <F4> :AddHeader<CR>
+noremap <F5> :Autoformat<CR>
+
 "映射光标在窗口间移动的快捷键
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
+"Header guard
+nnoremap <leader>ha :HeaderguardAdd<CR>
 
-map <F4> :AddHeader<CR>
-map nt :NERDTreeToggle<CR>
-map tb :TagbarToggle<CR>
-"设置切换Buffer快捷键"
-nnoremap <C-P> :bp<CR>
-nnoremap <C-N> :bn<CR>
+noremap nt :NERDTreeToggle<CR>
+noremap tb :TagbarToggle<CR>
 "a.vim
 nnoremap <leader>gt :A<CR>
 nnoremap <leader>gv :AV<CR>
@@ -83,8 +91,6 @@ nnoremap <leader>gh :AS<CR>
 "VimShell
 nnoremap <leader>vs :VimShell<CR>
 nnoremap <leader>vc :VimShellClose<CR>
-"Header guard
-nnoremap <leader>hga :HeaderguardAdd<CR>
 "YCM
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 nnoremap <leader>jt :YcmCompleter GoTo<CR>
@@ -92,7 +98,7 @@ nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename
-nnoremap <leader>rf :YcmCompleter Format<CR>
+nnoremap <leader>rf :YcmCompleter Format<CR>            " indent 2 spaces always
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -144,6 +150,7 @@ Plug 'terryma/vim-multiple-cursors'
 " comment
 Plug 'preservim/nerdcommenter'
 " format
+Plug 'Chiel92/vim-autoformat'
 Plug 'axelf4/vim-strip-trailing-whitespace'
 Plug 'junegunn/vim-easy-align'
 " completer
