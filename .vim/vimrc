@@ -89,9 +89,9 @@ nnoremap bn :bn<CR>
 nnoremap nt :NERDTreeToggle<CR>
 nnoremap tb :TagbarToggle<CR>
 "a.vim
-nnoremap <leader>gt :A<CR>
-nnoremap <leader>gv :AV<CR>
-nnoremap <leader>gh :AS<CR>
+nnoremap <leader>aa :A<CR>
+nnoremap <leader>av :AV<CR>
+nnoremap <leader>ah :AS<CR>
 "VimShell
 nnoremap <leader>vs :VimShell<CR>
 nnoremap <leader>vc :VimShellClose<CR>
@@ -111,6 +111,14 @@ nnoremap <leader>pr :Clap registers<CR>
 nnoremap <leader>pq :Clap quickfix<CR>
 nnoremap <leader>pl :Clap lines<CR>
 nnoremap <leader>pw :Clap grep ++query=<cword><CR>
+"fugitive
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gd :Git diff<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gm :Git mergetool<CR>
+nnoremap <leader>gt :Git difftool<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
