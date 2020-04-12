@@ -74,14 +74,20 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
+" Calendar
+nnoremap <leader>cdr :Calendar<CR>
+nnoremap <leader>cdy :Calendar -view=year<CR>
+nnoremap <leader>cdm :Calendar -view=month<CR>
+nnoremap <leader>cdw :Calendar -view=week<CR>
+nnoremap <leader>cdc :Calendar -view=clock<CR>
 "Header guard
 nnoremap <leader>ha :HeaderguardAdd<CR>
 " switch buffers
-nnoremap <leader>bp :bp<CR>
-nnoremap <leader>bn :bn<CR>
+nnoremap bp :bp<CR>
+nnoremap bn :bn<CR>
 " window
-noremap nt :NERDTreeToggle<CR>
-noremap tb :TagbarToggle<CR>
+nnoremap nt :NERDTreeToggle<CR>
+nnoremap tb :TagbarToggle<CR>
 "a.vim
 nnoremap <leader>gt :A<CR>
 nnoremap <leader>gv :AV<CR>
@@ -97,6 +103,14 @@ nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename
 nnoremap <leader>rf :YcmCompleter Format<CR>            " indent 2 spaces always
+"clap
+nnoremap <leader>pb :Clap buffers<CR>
+nnoremap <leader>pf :Clap files<CR>
+nnoremap <leader>pg :Clap grep<CR>
+nnoremap <leader>pr :Clap registers<CR>
+nnoremap <leader>pq :Clap quickfix<CR>
+nnoremap <leader>pl :Clap lines<CR>
+nnoremap <leader>pw :Clap grep ++query=<cword><CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -107,8 +121,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'itchyny/calendar.vim'
 " search
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'liuchengxu/vim-clap'
-"Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+" manager buffers, files, grep string etc
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 " Shell
 Plug 'Shougo/vimproc.vim',{'do': 'make'}
 Plug 'Shougo/vimshell.vim'            "depends on vimproc
