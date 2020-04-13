@@ -37,6 +37,7 @@ set foldenable                     " Enable folding
 set list                           " Show non-printable characters.
 
 set bs               =2            " 在insert模式下用退格键删除
+set updatetime       =500          " detect git difference quickly
 set history          =50           " set command history to 50 "历史记录50条
 set helplang         =cn           " 帮助系统设置为中文
 set foldcolumn       =1            " > 0, show fold column [0-12]
@@ -225,10 +226,12 @@ nmap ga <Plug>(EasyAlign)
 " }}
 
 "NERDTree{{
-"autocmd vimenter * NERDTree
+" Close vim if only the file explorer is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Disable arrow icons at the left side of folders for NERDTree.
 "let g:NERDTreeDirArrowExpandable = "\u00a0"
 "let g:NERDTreeDirArrowCollapsible = "\u00a0"
+let g:NERDTreeHighlightCursorline           = 0
 let g:DevIconsEnableFoldersOpenClose        = 1 "Enables different glyphs for open and closed folders"
 let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
 let g:NERDTreeIndicatorMapCustom = {
@@ -243,9 +246,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-let g:NERDTreeHighlightCursorline = 0
-" Close vim if only the file explorer is open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "}}
 
 "TagBar{{
