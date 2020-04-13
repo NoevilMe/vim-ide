@@ -132,9 +132,7 @@ Plug 'itchyny/calendar.vim'                                             " event 
 "Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }           " manager buffers, files, grep string etc
 " Shell
-Plug 'Shougo/vimproc.vim',{'do': 'make'}
-Plug 'Shougo/vimshell.vim'            "depends on vimproc
-"Plug 'Shougo/deol.nvim'
+Plug 'Shougo/deol.nvim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                           " [c, ]c to jump, <leader>hp to preview, <leader>hs to stage, <leader>hu to undo
@@ -327,8 +325,8 @@ let g:gitgutter_terminal_reports_focus = 0
 " }}
 
 " LeaderF {{
-"let g:Lf_PreviewInPopup = 1
-let g:Lf_WindowPosition = 'popup'
+" uncomment if you enable LeaderF
+"let g:Lf_WindowPosition = 'popup'
 " }}
 
 "----------DOCUMENT---------
