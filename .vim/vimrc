@@ -127,43 +127,43 @@ nnoremap <leader>gt :Git difftool<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
-Plug 'itchyny/calendar.vim'
+Plug 'itchyny/calendar.vim'                                             " event and task manager
 " search
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-" manager buffers, files, grep string etc
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+"Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }           " manager buffers, files, grep string etc
 " Shell
 Plug 'Shougo/vimproc.vim',{'do': 'make'}
 Plug 'Shougo/vimshell.vim'            "depends on vimproc
 "Plug 'Shougo/deol.nvim'
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'                                           " [c, ]c to jump, <leader>hp to preview, <leader>hs to stage, <leader>hu to undo
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " resource manager
 " On-demand loading
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle'  }
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'                                                " ctags is required
 " syntax for language
-Plug 'elzr/vim-json'
-" c++
-"Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'elzr/vim-json'                                                    " json
+"Plug 'octol/vim-cpp-enhanced-highlight'                                " c++
+" golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" selection
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-" replace
-Plug 'dkprice/vim-easygrep'
-Plug 'tpope/vim-surround'
+" select
+Plug 'kana/vim-textobj-user'                                            " depends
+Plug 'kana/vim-textobj-entire'                                          " vae to select entire buffer
+Plug 'terryma/vim-multiple-cursors'                                     " <c-n> select, <c-x> skip, <c-p> go prvious,  c/s/I/A to modify, v to exit this mode
+" replace.
+Plug 'dkprice/vim-easygrep'                                             " <leader>vv and <leader>vr are usually used
+Plug 'tpope/vim-surround'                                               " Edit surroundings. cs to replace, ds to delete , yss to add
 " locate
-Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/a.vim'                                                " swtich between source files and header files quickly. :A, :AS, :AV are usually used
 Plug 'mhinz/vim-startify'
 Plug 'haya14busa/incsearch.vim'
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'                                        " fast move and jump cursor in window. <leader><leader>w to move forward, <leader><leader>b to move backword
+                                                                        " <leader><leader>s to move di-direction by 1 char
+                                                                        " <leader><leader>j and <leader><leader>k jump by line
 " guide
-"Plug 'Shougo/echodoc.vim'
 Plug 'sjl/gundo.vim'
-Plug 'terryma/vim-multiple-cursors'
 " comment
 Plug 'preservim/nerdcommenter'
 " format
@@ -174,14 +174,14 @@ Plug 'junegunn/vim-easy-align'
 Plug 'alpertuna/vim-header'
 Plug 'NoevilMe/vim-headerguard'
 " Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Snippet engines and snippets files.
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'                     " work with YCM. <c-n> or <c-p> select the snippet then <tab> to insert it.
 " the best code completer for c++, python etc
 Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
 " a syntax checking
 Plug 'scrooloose/syntastic'
 " bracket
-
-"Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plug 'vim-scripts/L9'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -200,11 +200,11 @@ call plug#end()"
 " Plugins Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " solarized {{
-let g:colors_name='solarized'
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_contrast='normal'
-let g:solarized_visibility='normal'
+let g:colors_name                   = 'solarized'
+let g:solarized_termcolors          = 256
+let g:solarized_termtrans           = 1
+let g:solarized_contrast            = 'normal'
+let g:solarized_visibility          = 'normal'
 "colorscheme solarized
 colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night-Bright
@@ -216,6 +216,11 @@ let g:header_field_author           = 'NoevilMe'
 let g:header_field_author_email     = 'surpass168@live.com'
 let g:header_field_copyright        = 'Copyright(C)2020 NoevilMe. All rights reserved.'
 let g:header_field_timestamp_format = '%Y-%m-%d %H:%M:%S'
+" }}
+
+" Gundo {{
+let g:gundo_prefer_python3          = v:true
+"
 " }}
 
 " EasyAlign {{
@@ -246,12 +251,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-"}}
-
-"TagBar{{
-"let g:tagbar_ctags_bin='/usr/bin/ctags'
-"let g:tagbar_width=30
-"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 "}}
 
 "YCM{{
@@ -300,14 +299,6 @@ let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_complete_in_comments = 1
 "let g:ycm_complete_in_strings = 1
 "let g:ycm_collect_identifiers_from_comments_and_strings = 0
-
-"}}
-
-" better key bindings for UltiSnipsExpandTrigger
-"let g:UltiSnipsExpandTrigger="<c-e>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 "}}
 
 "Airline {{
@@ -331,7 +322,9 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_posix_standard = 1
 " }}
 
+" Gitgutter {{
 let g:gitgutter_terminal_reports_focus = 0
+" }}
 
 " LeaderF {{
 "let g:Lf_PreviewInPopup = 1
@@ -343,4 +336,4 @@ let g:Lf_WindowPosition = 'popup'
 "set paste , before pasting
 "set nopaste , after pasting
 
-set viminfo='100,n$HOME/.vim/files/info/viminfo'
+set viminfo='100,n$HOME/.vim/files/info/viminfo

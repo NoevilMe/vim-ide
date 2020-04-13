@@ -15,6 +15,7 @@ sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev \
     python3-dev libperl-dev git
 
+# fonts for airline
 sudo apt install fonts-powerline
 
 # build and install
