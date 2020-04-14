@@ -13,7 +13,7 @@ sudo apt remove --purge vim-tiny vim vim-runtime gvim vim-common vim-gui-common 
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev \
-    python3-dev libperl-dev git
+    python3-dev libperl-dev git ctags
 
 # fonts for airline
 sudo apt install fonts-powerline
