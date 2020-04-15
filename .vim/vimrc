@@ -93,9 +93,6 @@ nnoremap tb :TagbarToggle<CR>
 nnoremap <leader>aa :A<CR>
 nnoremap <leader>av :AV<CR>
 nnoremap <leader>ah :AS<CR>
-"VimShell
-nnoremap <leader>vs :VimShell<CR>
-nnoremap <leader>vc :VimShellClose<CR>
 "YCM
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 nnoremap <leader>jt :YcmCompleter GoTo<CR>
@@ -125,11 +122,14 @@ nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gm :Git mergetool<CR>
 nnoremap <leader>gt :Git difftool<CR>
 
+tnoremap <ESC>   <C-\><C-n>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plug 'vim-scripts/L9'
 " Make sure you use single quotes
 Plug 'itchyny/calendar.vim'                                             " event and task manager
 " search
@@ -186,8 +186,6 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'dense-analysis/ale'
 " bracket
 Plug 'jiangmiao/auto-pairs'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plug 'vim-scripts/L9'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
  " Initialize plugin system
