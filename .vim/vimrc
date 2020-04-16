@@ -67,6 +67,7 @@ endif"
 " v(nore)map, work in visual mode
 " n(nore)map, work in normal mode
 
+
 noremap <F4> :AddHeader<CR>
 noremap <F5> :Autoformat<CR>
 
@@ -75,6 +76,10 @@ nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
+
+tnoremap <ESC> <c-\><c-n>
+nnoremap <leader>sh :term<CR>
+
 " Calendar
 nnoremap <leader>cdr :Calendar<CR>
 nnoremap <leader>cdy :Calendar -view=year<CR>
@@ -117,6 +122,9 @@ nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gb :Git blame<CR>
 nnoremap <leader>gm :Git mergetool<CR>
 nnoremap <leader>gt :Git difftool<CR>
+"indentline
+nnoremap <leader>il :IndentLinesToggle<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
