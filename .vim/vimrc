@@ -106,6 +106,10 @@ nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename
 nnoremap <leader>rf :YcmCompleter Format<CR>            " indent 2 spaces always
+nnoremap <leader>jd :YcmDiags<CR>
+"location list, if ale/syntastic is enabled
+nnoremap <leader>lo :lopen<CR>
+nnoremap <leader>lc :lclose<CR>
 "clap
 nnoremap <leader>pb :Clap buffers<CR>
 nnoremap <leader>pf :Clap files<CR>
@@ -180,35 +184,43 @@ Plug 'NoevilMe/vim-headerguard'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'                     " work with YCM. <c-n> or <c-p> select the snippet then <tab> to insert it.
 " the best code completer for c++, python etc
 Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clangd-completer'}
-" a syntax checking
-Plug 'scrooloose/syntastic'
+" a syntax checking and highlight
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-syntastic/syntastic'
+"YCM diagnostic is from Clang while the ALE one is from GCC, but ale is unnecessary because of YCM.
+"Plug 'dense-analysis/ale'"
 " bracket
 Plug 'jiangmiao/auto-pairs'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
  " Initialize plugin system
 " display
-Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
+" theme
+Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 call plug#end()"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " solarized {{
-let g:colors_name                   = 'solarized'
 let g:solarized_termcolors          = 256
 let g:solarized_termtrans           = 1
 let g:solarized_contrast            = 'normal'
 let g:solarized_visibility          = 'normal'
+"}}
+
+" colors {{
+"colorscheme gruvbox
 "colorscheme solarized
 colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night-Bright
-"}}
+" }}
 
 " copyright header {{
 let g:header_auto_add_header        = 0
@@ -336,4 +348,8 @@ let g:gitgutter_terminal_reports_focus = 0
 "set paste , before pasting
 "set nopaste , after pasting
 
+let s:vim_info_dir = expand('~/.vim/files/info')
+if !isdirectory(s:vim_info_dir)
+    silent! call mkdir(s:vim_info_dir, 'p')
+endif
 set viminfo='100,n$HOME/.vim/files/info/viminfo
