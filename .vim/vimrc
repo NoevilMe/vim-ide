@@ -179,7 +179,7 @@ Plug 'NoevilMe/vim-headerguard'
 " Snippet engines and snippets files.
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'                     " work with YCM. <c-n> or <c-p> select the snippet then <tab> to insert it.
 " the best code completer for c++, python etc
-Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe',{'do': './install.py --clangd-completer'}
 " a syntax checking
 Plug 'scrooloose/syntastic'
 " bracket
