@@ -139,8 +139,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 Plug 'itchyny/calendar.vim'                                             " event and task manager
 " search
-"Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }           " manager buffers, files, grep string etc
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }           " manager buffers, files, grep string etc
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                           " [c, ]c to jump, <leader>hp to preview, <leader>hs to stage, <leader>hu to undo
@@ -340,7 +339,7 @@ let g:gitgutter_terminal_reports_focus = 0
 
 " LeaderF {{
 " uncomment if you enable LeaderF
-"let g:Lf_WindowPosition = 'popup'
+let g:Lf_WindowPosition = 'popup'
 " }}
 
 "----------DOCUMENT---------

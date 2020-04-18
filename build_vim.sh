@@ -18,8 +18,10 @@ sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
 # fonts for airline
 sudo apt install fonts-powerline
 
+# for YCM
+sudo apt install build-essential cmake python3-dev
 sudo apt install python3-pip
-pip3 install setuptools
+pip3 install setuptools numpydoc
 
 # build and install
 ./configure --with-features=huge \
