@@ -337,11 +337,6 @@ let g:cpp_posix_standard = 1
 let g:gitgutter_terminal_reports_focus = 0
 " }}
 
-" LeaderF {{
-" uncomment if you enable LeaderF
-let g:Lf_WindowPosition = 'popup'
-" }}
-
 "----------DOCUMENT---------
 "do not indent when paste
 "set paste , before pasting

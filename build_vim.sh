@@ -18,6 +18,9 @@ sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
 # fonts for airline
 sudo apt install fonts-powerline
 
+# auto format
+sudo apt install clang-format
+
 # for YCM
 sudo apt install build-essential cmake python3-dev
 sudo apt install python3-pip
