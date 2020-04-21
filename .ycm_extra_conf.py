@@ -35,8 +35,8 @@ import ycm_core
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
-flags = [
-        '-Wall',
+base_flags = [
+        # '-Wall',
         '-Wextra',
         '-Werror',
         # '-Wc++98-compat',
@@ -56,24 +56,32 @@ flags = [
         # relevant for c++ headers.
         # For a C project, you would set this to 'c' instead of 'c++'.
         '-x',
-        'c++',
-        # must put in front of /usr/include
-        '-isystem',
-        '/usr/include/c++/8',
-        '-isystem',
-        '/usr/include',
-        '-I',
-        '.',
-        '-I',
-        "./lib/mojo",
-        '-I',
-        "./deployer",
-        '-I',
-        "./service",
-        '-I',
-        "./build"
+        'c++'
         ]
 
+# https://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-in-system-headers
+# https://releases.llvm.org/9.0.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-isystem-directory
+# Add all system directory which should be included here. 
+# -isystem <dir>
+sys_include_dir = [
+    # must put in front of /usr/include
+    '/usr/include/c++/8',
+    '/usr/include/c++/7',
+    '/usr/include'
+]
+
+# https://releases.llvm.org/9.0.0/tools/clang/docs/ClangCommandLineReference.html#include-path-management
+# https://releases.llvm.org/9.0.0/tools/clang/docs/ClangCommandLineReference.html#cmdoption-clang-i-dir
+# Add your project subdirectory which should be included here
+# -I <dir>
+project_include_dir = [
+    # ".",
+    "./build",
+    "./mojo"
+]
+
+flags = base_flags + sum([['-isystem', d] for d in sys_include_dir if os.path.exists(d)],[]) +\
+    sum([ ['-I', d] for d in project_include_dir if os.path.exists(d)], [])
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
