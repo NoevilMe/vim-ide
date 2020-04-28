@@ -100,13 +100,15 @@ nnoremap <leader>av :AV<CR>
 nnoremap <leader>ah :AS<CR>
 "YCM
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
-nnoremap <leader>jt :YcmCompleter GoTo<CR>
+nnoremap <leader>jg :YcmCompleter GoTo<CR>
 nnoremap <leader>jr :YcmCompleter GoToReferences<CR>
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>rr :YcmCompleter RefactorRename
 nnoremap <leader>rf :YcmCompleter Format<CR>            " indent 2 spaces always
-nnoremap <leader>jd :YcmDiags<CR>
+nnoremap <leader>jt :YcmCompleter FixIt<CR>
+nnoremap <leader>js :YcmDiags<CR>
+nnoremap <leader>jo :YcmDebugInfo<CR>
 "location list, if ale/syntastic is enabled
 nnoremap <leader>lo :lopen<CR>
 nnoremap <leader>lc :lclose<CR>
