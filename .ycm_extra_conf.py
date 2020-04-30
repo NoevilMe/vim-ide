@@ -75,7 +75,7 @@ sys_include_dir = [
 # Add your project subdirectory which should be included here
 # -I <dir>
 project_include_dir = [
-    # ".",
+    ".",
     "./build",
     "./mojo"
 ]
