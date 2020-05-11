@@ -24,7 +24,7 @@ sudo apt install clang-format
 # for YCM
 sudo apt install build-essential cmake python3-dev
 sudo apt install python3-pip
-pip3 install setuptools numpydoc
+pip3 install setuptools numpydoc cmake_format
 
 # build and install
 ./configure --with-features=huge \
